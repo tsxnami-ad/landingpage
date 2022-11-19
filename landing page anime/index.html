@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./interacao.js">
+    <title>Document</title>
+</head>
+<body>
+    <div id="degrade" class=""></div>
+    <div class="main" id="mainbackground">
+        <div class="box">
+            <div class="left">
+                <div id="one" class="one">
+                <div class="up">
+                    <h1 style="font-size: 40px; font-family: 'Secular One', sans-serif;">whats your name?</h1>
+                    <label for="nome">type here</label>
+
+            <input type="text" id="names" name="nome" type="text" placeholder="example">
+ 
+            <div class="botao">
+            <button onclick="NoClique();" id="inputnome">ENTER</button>
+        </div>
+    </div>
+                </div>
+                
+                <div class="text-size" id="dois" style="position:absolute; visibility: hidden;">
+                <div class="texx">
+                    <h2 style="color: orange;">WELCOME</h2>
+                    <div class="down">
+                    <h1 style="font-size: 70px;" id="textin"> </h1>
+                </div>
+                <div class="under-text" font-size: 5px;">
+                <h2>
+                wanna make it <a href="" id="textomudando" style="color: orange; text-decoration: none;">true</a>
+                </h2>
+                <script type="application/javascript">
+                    var texto = ["true?", "automatic?", "alive?", "togheter?", "with us <3"]
+                    var counter = 0;
+                    var elem = document.getElementById("textomudando");
+                    var inst = setInterval(change, 2000);
+
+                    function change() {
+                        elem.innerHTML = texto[counter]
+                        counter++
+                        if (counter > 4) {counter = 0};
+                    }
+                </script>
+            </div>
+            </div>
+
+                <!--                        var texto = ["true?", "automatic?", "togheter?", "alive?"]
+                        var counter = 0;
+                        var elem = document.getElementById("textomudando");
+                        var inst = setInterval(change, 2000);
+
+                        function change() {
+                            elem.innerHTML = texto[counter];
+                            counter++;
+                            if (counter >= 4) {
+                                counter = 0;
+                            }
+                        };-->
+            </div>
+            </div>
+
+            <div class="right">
+
+            </div>
+    </div>
+    </div>
+
+    <script type="application/javascript">
+        var state = 0;
+        var back = document.getElementById("mainbackground");
+        var up = document.getElementById("one");
+        var baixo = document.getElementById("dois");
+        var degrade = document.getElementById("degrade");
+        function NoClique() {
+        let nome = document.getElementById("names").value;
+        console.log(nome)
+        var textin = document.getElementById("textin").innerHTML = nome;
+        state = 1
+        console.log(state)
+        console.log(baixo)
+
+        if (state > 0) {
+            up.style.visibility = 'hidden';
+        };
+        if (state > 0) {
+            baixo.style.visibility = 'visible';
+            back.style.background = 'none';
+        };
+
+        if (state == 1) {
+            degrade.classList.add('degrade');
+        };
+    }
+    </script>
+</body>
+</html>
